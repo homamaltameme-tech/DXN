@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دي اكس ان العراق - إدارة المطور همام</title>
+    <style>
+        :root {
+            --main-green: #2d5a27;
+            --main-red: #d32f2f;
+            --light-bg: #f9f9f9;
+            --whatsapp-green: #25d366;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        header {
+            background-color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--main-red);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+
+        .btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
+        .products {
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--main-green);
+        }
+
+        .card h3 { color: var(--main-green); }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .developer-rights {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #bbb;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .developer-rights span {
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DXN <span style="color: var(--main-green);">IRAQ</span></div>
+    </header>
+
+    <section class="hero">
+        <h1>صحتك هي ثروتك الحقيقية</h1>
+        <p>ابدأ رحلتك اليوم مع مكملات DXN الطبيعية وحقق طموحك المالي.</p>
+        <a href="https://wa.me/9647701815548" class="btn">تواصل معي الآن</a>
+    </section>
+
+    <section class="products">
+        <div class="card">
+            <h3>مكملات غذائية</h3>
+            <p>اكتشف فوائد الفطر الريشي والسبيرولينا لتعزيز مناعتك.</p>
+        </div>
+        <div class="card">
+            <h3>مشروبات صحية</h3>
+            <p>استمتع بقهوة لينجزي السوداء، طعم رائع وفوائد صحية.</p>
+        </div>
+        <div class="card">
+            <h3>عناية شخصية</h3>
+            <p>منتجات طبيعية تماماً للعناية بالبشرة والجسم.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - وكيل دي اكس ان المعتمد</p>
+        <div class="developer-rights">
+            تطوير وتصميم المبرمج: <span>همام</span>
+        </div>
+    </footer>
+
+</body>
+</html>
