@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DXN Iraq - المنتجات والفوائد</title>
+    <title>دي اكس ان العراق - المطور همام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --main-green: #2d5a27;
+            --main-green: #1b5e20;
             --main-red: #d32f2f;
-            --bg: #f4f4f4;
-            --white: #ffffff;
+            --bg-color: #f8f9fa;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg);
+            background-color: var(--bg-color);
             color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: var(--white);
+            background-color: #fff;
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -32,165 +33,164 @@
             z-index: 1000;
         }
 
-        .logo { font-size: 1.6rem; font-weight: bold; color: var(--main-red); }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--main-red); }
         .logo span { color: var(--main-green); }
 
         nav a {
-            margin: 0 10px;
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            background: #eee;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1512152272829-e3139599d60f?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             color: white;
-            text-align: center;
+            background: var(--main-green);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
         }
 
-        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        /* الصفحة الرئيسية - التعريف */
+        .hero {
+            padding: 60px 10%;
+            background: white;
+            text-align: center;
+            border-bottom: 5px solid var(--main-green);
+        }
+
+        .hero h1 { color: var(--main-red); margin-bottom: 20px; }
+        .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 20px; color: #555; }
 
         /* قسم المنتجات */
-        .products-section { padding: 40px 5%; }
-        .section-title { text-align: center; color: var(--main-green); margin-bottom: 30px; font-size: 2rem; }
-
+        .section-title { text-align: center; padding: 40px 0; color: var(--main-green); font-size: 2rem; }
+        
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
+            padding: 0 5% 50px;
         }
 
         .product-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border: 1px solid #ddd;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-right: 4px solid var(--main-red);
         }
 
-        .product-card:hover { transform: translateY(-5px); }
+        .product-card h3 { color: var(--main-green); margin-top: 0; }
+        .product-card p { font-size: 0.95rem; color: #666; margin-bottom: 0; }
 
-        .product-info { padding: 20px; }
-        .product-name { color: var(--main-red); font-size: 1.4rem; margin: 0; font-weight: bold; }
-        .product-benefit { color: var(--main-green); font-weight: bold; margin: 10px 0; }
-        .product-details { font-size: 0.95rem; color: #666; line-height: 1.6; }
-
-        .btn-order {
-            display: block;
-            background: #25d366;
+        /* زر التسجيل */
+        .cta-box {
+            background: var(--main-green);
             color: white;
             text-align: center;
-            padding: 12px;
+            padding: 50px 20px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 15px 40px;
             text-decoration: none;
-            margin-top: 15px;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         footer {
             background: #1a1a1a;
-            color: white;
+            color: #ccc;
             text-align: center;
             padding: 30px;
-            margin-top: 40px;
         }
 
-        .dev-name { color: #25d366; font-weight: bold; }
+        .dev-credit { color: #fff; font-weight: bold; margin-top: 10px; display: block; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">DXN <span>IRAQ</span></div>
-        <nav>
-            <a href="#products">📦 المنتجات</a>
-        </nav>
+        <nav><a href="#products">📦 المنتجات</a></nav>
     </header>
 
     <section class="hero">
-        <h1>منتجات دي اكس ان الطبيعية</h1>
-        <p>جودة عالمية لصحة مستدامة</p>
+        <h1>ما هي شركة دي اكس ان؟</h1>
+        <p>
+            تأسست شركة DXN في ماليزيا عام <b>1993</b> على يد الداتو الدكتور ليم سيوجين. بدأت الشركة برؤية واضحة وهي تقديم فوائد الفطر الريشي (الجانوديرما) للعالم أجمع، وتعتمد نظام "التنين الواحد" حيث تقوم بكل شيء من الزراعة والتصنيع إلى التسويق بنفسها.
+        </p>
+        <p>
+            اليوم، تتواجد الشركة في أكثر من 180 دولة، ولديها ملايين الأعضاء، وهي معروفة عالمياً بجودة منتجاتها الصحية التي تعتمد على الطبيعة والبحث العلمي.
+        </p>
     </section>
 
-    <section class="products-section" id="products">
-        <h2 class="section-title">قائمة المنتجات وفوائدها</h2>
+    <h2 class="section-title" id="products">أبرز 10 منتجات وفوائدها</h2>
+    <section class="products-grid">
         
-        <div class="products-grid">
-            
-            <div class="product-card">
-                <div class="product-info">
-                    <p class="product-name">الفطر الريشي (الجانوديرما)</p>
-                    <p class="product-benefit">✅ ملك الأعشاب وطارد السموم</p>
-                    <p class="product-details">
-                        يعمل على تنظيف الجسم من السموم المتركمة، يعزز جهاز المناعة بشكل قوي، ويساعد على تجديد خلايا الجسم وتحسين الدورة الدموية.
-                    </p>
-                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <p class="product-name">سبيرولينا (الغذاء السوبر)</p>
-                    <p class="product-benefit">✅ منجم الفيتامينات والبروتين</p>
-                    <p class="product-details">
-                        تعتبر الغذاء المتكامل، غنية جداً بالحديد والبروتين، تعالج فقر الدم (الأنيميا)، وتمنح الجسم طاقة وحيوية ونشاط غير محدود.
-                    </p>
-                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <p class="product-name">قهوة لينجزي (3 في 1)</p>
-                    <p class="product-benefit">✅ مذاق رائع وصحة مثالية</p>
-                    <p class="product-details">
-                        قهوة فاخرة تحتوي على نسبة قليلة جداً من الكافيين وممزوجة بخلاصة الفطر الريشي. لا تسبب حموضة أو أرق، وتساعد على الهضم.
-                    </p>
-                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <p class="product-name">معجون أسنان جانوزي</p>
-                    <p class="product-benefit">✅ صديق اللثة والأسنان</p>
-                    <p class="product-details">
-                        خالي من الفلورايد والمواد الملونة. يعالج نزيف اللثة، يزيل الروائح الكريهة، ويمكن استخدامه كمسكن موضعي للحروق البسيطة.
-                    </p>
-                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <p class="product-name">عصير مورينزي</p>
-                    <p class="product-benefit">✅ منشط الأنزيمات والهضم</p>
-                    <p class="product-details">
-                        مستخلص من فاكهة النوني. يساعد في حل مشاكل القولون والجهاز الهضمي، يحسن جودة النوم، ويقلل من التوتر والإجهاد.
-                    </p>
-                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
-                </div>
-            </div>
-
+        <div class="product-card">
+            <h3>1. الفطر الريشي</h3>
+            <p>يطرد السموم من الجسم، يعزز المناعة، ويساعد الخلايا على التجدد بشكل طبيعي.</p>
         </div>
+
+        <div class="product-card">
+            <h3>2. سبيرولينا</h3>
+            <p>غذاء سوبر غني بالبروتين والفيتامينات، يعالج فقر الدم ويمد الجسم بطاقة هائلة.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>3. قهوة لينجزي السوداء</h3>
+            <p>قهوة صحية قليلة الكافيين، تساعد على الهضم ولا تسبب أرقاً أو حموضة.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>4. معجون أسنان جانوزي</h3>
+            <p>طبيعي خالي من الفلورايد، يحافظ على اللثة ويقضي على الروائح الكريهة.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>5. عصير مورينزي</h3>
+            <p>مستخلص من فاكهة النوني، رائع لمشاكل القولون والجهاز الهضمي وتحسين النوم.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>6. فطر عرف الأسد</h3>
+            <p>صديق الجهاز العصبي، يقوي الذاكرة والتركيز ويحمي الأعصاب من التلف.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>7. صابون جانوزي</h3>
+            <p>غني بالفطر الريشي وفيتامين E، يحافظ على نعومة البشرة ويحميها من البكتيريا.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>8. زيت جانو للمساج</h3>
+            <p>مثالي لآلام المفاصل والعضلات، ويعمل كمرطب طبيعي وقوي جداً للبشرة.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>9. فطر كوردسيبس</h3>
+            <p>يقوي وظائف الرئتين والكلى، ويزيد من كفاءة الجهاز التنفسي والقدرة البدنية.</p>
+        </div>
+
+        <div class="product-card">
+            <h3>10. كريم الشاي</h3>
+            <p>مضاد حيوي طبيعي، يعالج الحكة البسيطة والبعوض ويرطب البشرة بلطف.</p>
+        </div>
+
+    </section>
+
+    <section class="cta-box">
+        <h2>هل تود تغيير حياتك الصحية والمالية؟</h2>
+        <p>انضم إلينا الآن واحصل على رقم عضوية دولي مجاناً وابدأ مشروعك من المنزل.</p>
+        <a href="https://wa.me/9647701815548" class="whatsapp-btn">
+            سجل عضويتك عبر الواتساب الآن
+        </a>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة لشركة DXN - العراق &copy; 2026</p>
-        <p>تطوير المبرمج الاحترافي: <span class="dev-name">همام</span></p>
+        <p>جميع الحقوق محفوظة لشركة DXN العالمية &copy; 2026</p>
+        <span class="dev-credit">تطوير وتصميم المبرمج: همام</span>
     </footer>
 
 </body>
