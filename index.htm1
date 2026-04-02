@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دي اكس ان العراق - إدارة المطور همام</title>
+    <title>DXN Iraq - المنتجات والفوائد</title>
     <style>
         :root {
             --main-green: #2d5a27;
             --main-red: #d32f2f;
-            --light-bg: #f9f9f9;
-            --whatsapp-green: #25d366;
+            --bg: #f4f4f4;
+            --white: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light-bg);
+            background-color: var(--bg);
             color: #333;
         }
 
         header {
-            background-color: white;
-            padding: 1rem 5%;
+            background-color: var(--white);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,116 +32,165 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 1.8rem;
+        .logo { font-size: 1.6rem; font-weight: bold; color: var(--main-red); }
+        .logo span { color: var(--main-green); }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
             font-weight: bold;
-            color: var(--main-red);
+            background: #eee;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
         }
 
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1512152272829-e3139599d60f?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
-            background-position: center;
-            height: 70vh;
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
-            padding: 0 20px;
         }
 
-        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
 
-        .btn {
-            background-color: var(--whatsapp-green);
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: 0.3s;
-            display: inline-block;
-        }
+        /* قسم المنتجات */
+        .products-section { padding: 40px 5%; }
+        .section-title { text-align: center; color: var(--main-green); margin-bottom: 30px; font-size: 2rem; }
 
-        .btn:hover { transform: scale(1.05); }
-
-        .products {
-            padding: 50px 5%;
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .card {
-            background: white;
-            padding: 30px;
+        .product-card {
+            background: var(--white);
             border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-bottom: 5px solid var(--main-green);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border: 1px solid #ddd;
         }
 
-        .card h3 { color: var(--main-green); }
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-info { padding: 20px; }
+        .product-name { color: var(--main-red); font-size: 1.4rem; margin: 0; font-weight: bold; }
+        .product-benefit { color: var(--main-green); font-weight: bold; margin: 10px 0; }
+        .product-details { font-size: 0.95rem; color: #666; line-height: 1.6; }
+
+        .btn-order {
+            display: block;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
 
         footer {
-            text-align: center;
-            padding: 40px 20px;
             background: #1a1a1a;
             color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
         }
 
-        .developer-rights {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: #bbb;
-            border-top: 1px solid #333;
-            padding-top: 15px;
-        }
-
-        .developer-rights span {
-            color: #fff;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+        .dev-name { color: #25d366; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">DXN <span style="color: var(--main-green);">IRAQ</span></div>
+        <div class="logo">DXN <span>IRAQ</span></div>
+        <nav>
+            <a href="#products">📦 المنتجات</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <h1>صحتك هي ثروتك الحقيقية</h1>
-        <p>ابدأ رحلتك اليوم مع مكملات DXN الطبيعية وحقق طموحك المالي.</p>
-        <a href="https://wa.me/9647701815548" class="btn">تواصل معي الآن</a>
+        <h1>منتجات دي اكس ان الطبيعية</h1>
+        <p>جودة عالمية لصحة مستدامة</p>
     </section>
 
-    <section class="products">
-        <div class="card">
-            <h3>مكملات غذائية</h3>
-            <p>اكتشف فوائد الفطر الريشي والسبيرولينا لتعزيز مناعتك.</p>
-        </div>
-        <div class="card">
-            <h3>مشروبات صحية</h3>
-            <p>استمتع بقهوة لينجزي السوداء، طعم رائع وفوائد صحية.</p>
-        </div>
-        <div class="card">
-            <h3>عناية شخصية</h3>
-            <p>منتجات طبيعية تماماً للعناية بالبشرة والجسم.</p>
+    <section class="products-section" id="products">
+        <h2 class="section-title">قائمة المنتجات وفوائدها</h2>
+        
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <div class="product-info">
+                    <p class="product-name">الفطر الريشي (الجانوديرما)</p>
+                    <p class="product-benefit">✅ ملك الأعشاب وطارد السموم</p>
+                    <p class="product-details">
+                        يعمل على تنظيف الجسم من السموم المتركمة، يعزز جهاز المناعة بشكل قوي، ويساعد على تجديد خلايا الجسم وتحسين الدورة الدموية.
+                    </p>
+                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <p class="product-name">سبيرولينا (الغذاء السوبر)</p>
+                    <p class="product-benefit">✅ منجم الفيتامينات والبروتين</p>
+                    <p class="product-details">
+                        تعتبر الغذاء المتكامل، غنية جداً بالحديد والبروتين، تعالج فقر الدم (الأنيميا)، وتمنح الجسم طاقة وحيوية ونشاط غير محدود.
+                    </p>
+                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <p class="product-name">قهوة لينجزي (3 في 1)</p>
+                    <p class="product-benefit">✅ مذاق رائع وصحة مثالية</p>
+                    <p class="product-details">
+                        قهوة فاخرة تحتوي على نسبة قليلة جداً من الكافيين وممزوجة بخلاصة الفطر الريشي. لا تسبب حموضة أو أرق، وتساعد على الهضم.
+                    </p>
+                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <p class="product-name">معجون أسنان جانوزي</p>
+                    <p class="product-benefit">✅ صديق اللثة والأسنان</p>
+                    <p class="product-details">
+                        خالي من الفلورايد والمواد الملونة. يعالج نزيف اللثة، يزيل الروائح الكريهة، ويمكن استخدامه كمسكن موضعي للحروق البسيطة.
+                    </p>
+                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <p class="product-name">عصير مورينزي</p>
+                    <p class="product-benefit">✅ منشط الأنزيمات والهضم</p>
+                    <p class="product-details">
+                        مستخلص من فاكهة النوني. يساعد في حل مشاكل القولون والجهاز الهضمي، يحسن جودة النوم، ويقلل من التوتر والإجهاد.
+                    </p>
+                    <a href="https://wa.me/9647701815548" class="btn-order">اطلب الآن عبر واتساب</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - وكيل دي اكس ان المعتمد</p>
-        <div class="developer-rights">
-            تطوير وتصميم المبرمج: <span>همام</span>
-        </div>
+        <p>جميع الحقوق محفوظة لشركة DXN - العراق &copy; 2026</p>
+        <p>تطوير المبرمج الاحترافي: <span class="dev-name">همام</span></p>
     </footer>
 
 </body>
